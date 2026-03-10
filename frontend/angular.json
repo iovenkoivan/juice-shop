@@ -28,7 +28,14 @@
               "zone.js"
             ],
             "tsConfig": "src/tsconfig.app.json",
-            "assets": ["src/assets"],
+            "assets": [
+              "src/assets",
+              {
+                "glob": "**/*",
+                "input": "node_modules/flag-icons/flags",
+                "output": "/media"
+              }
+            ],
             "styles": [
               "src/styles.scss",
               "node_modules/material-icons/iconfont/material-icons.css",
