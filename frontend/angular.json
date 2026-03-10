@@ -32,7 +32,7 @@
               "src/assets",
               {
                 "glob": "**/*",
-                "input": "node_modules/flag-icons/flags",
+                "input": "node_modules/flag-icons/flags/1x1",
                 "output": "/media"
               }
             ],
