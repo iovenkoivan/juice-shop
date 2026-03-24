@@ -31,7 +31,7 @@ export interface Notification {
 }
 export const notifications: Notification[] = []
 
-export const retrieveBlueprintChallengeFile: string | null = null
+export let retrieveBlueprintChallengeFile: string | null = null
 export function setRetrieveBlueprintChallengeFile (retrieveBlueprintChallengeFileArg: string) {
   retrieveBlueprintChallengeFile = retrieveBlueprintChallengeFileArg
 }
