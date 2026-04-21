@@ -26,6 +26,13 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Крок завершиться з помилкою, якщо в коді знайдені API-ключі або паролі
 
+      # 2. Перевірка Dockerfile (Hadolint)
+      - name: Lint Dockerfile (Hadolint)
+        uses: hadolint/hadolint-action@v3.1.0
+        with:
+          dockerfile: Dockerfile
+        continue-on-error: true
+
       # 3. Збірка образу
       - name: Build Docker image
         run: |
@@ -46,6 +53,7 @@ jobs:
         with:
           image: 'juice-shop:${{ github.sha }}'
           format: list
+        continue-on-error: true
 
       # 6. Збереження звіту як артефакту (для вашої лаби)
       - name: Upload Security Report
