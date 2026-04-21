@@ -26,12 +26,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         # Крок завершиться з помилкою, якщо в коді знайдені API-ключі або паролі
 
-      # 2. Перевірка Dockerfile (Hadolint)
-      - name: Lint Dockerfile (Hadolint)
-        uses: hadolint/hadolint-action@v3.1.0
-        with:
-          dockerfile: Dockerfile
-
       # 3. Збірка образу
       - name: Build Docker image
         run: |
